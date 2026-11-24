@@ -43,7 +43,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/Siamin/APK-Signer.git
-cd REPOSITORY
+cd APK-Signer
 ```
 
 No additional Python packages are required.

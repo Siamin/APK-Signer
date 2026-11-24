@@ -161,6 +161,8 @@ def inspect_keystore(keytool, keystore, password_file):
     result = run_command(
         [
             keytool,
+            "-J-Duser.language=en",
+            "-J-Duser.country=US",
             "-list",
             "-v",
             "-keystore",
@@ -279,6 +281,11 @@ def select_alias(aliases):
     if len(aliases) == 1:
         print(f"\n[+] Automatically selected Alias: {aliases[0]}")
         return aliases[0]
+
+    print("\nAvailable Private Key Aliases:")
+
+    for index, alias in enumerate(aliases, start=1):
+        print(f"  {index}. {alias}")
 
     while True:
         value = input("\nSelect Alias number: ").strip()
